@@ -1,0 +1,113 @@
+11.
+SELECT b.title,
+       a.author_name
+FROM books b
+JOIN authors a ON b.author_id = a.author_id;
+
+12.
+SELECT b.title,
+       g.genre_name
+FROM books b
+JOIN genres g ON b.genre_id = g.genre_id
+WHERE g.genre_name = 'Science Fiction';
+
+
+13.SELECT DISTINCT u.user_id,
+                u.username,
+                u.email
+FROM users u
+JOIN loans l ON u.user_id = l.user_id
+JOIN books b  ON l.book_id = b.book_id
+WHERE b.title = '1984';
+
+
+14.SELECT a.author_id,
+       a.author_name,
+       COUNT(b.book_id) AS book_count
+FROM authors a
+LEFT JOIN books b ON a.author_id = b.author_id
+GROUP BY a.author_id, a.author_name
+ORDER BY book_count DESC, a.author_name;
+
+
+15.SELECT l.loan_id,
+       l.user_id,
+       l.book_id,
+       l.loan_date,
+       l.return_date
+FROM loans l
+WHERE l.return_date IS NOT NULL
+  AND TRUNC(l.return_date) < TRUNC(SYSDATE)
+ORDER BY l.return_date;
+
+
+16.SELECT u.user_id,
+       u.username,
+       COUNT(l.loan_id) AS borrowed_count
+FROM users u
+LEFT JOIN loans l ON u.user_id = l.user_id
+GROUP BY u.user_id, u.username
+ORDER BY borrowed_count DESC, u.user_id;
+
+
+17.SELECT a.author_id,
+       a.author_name,
+       COUNT(b.book_id) AS book_count
+FROM authors a
+JOIN books b ON a.author_id = b.author_id
+GROUP BY a.author_id, a.author_name
+HAVING COUNT(b.book_id) > 2
+ORDER BY book_count DESC;
+
+
+18.
+SELECT u.user_id,
+       u.username,
+       uc.cnt AS borrowed_count
+FROM users u
+JOIN (
+  SELECT l.user_id,
+         COUNT(*) AS cnt
+  FROM loans l
+  GROUP BY l.user_id
+) uc ON u.user_id = uc.user_id
+WHERE uc.cnt = (
+  SELECT MAX(x.cnt)
+  FROM (
+    SELECT COUNT(*) AS cnt
+    FROM loans
+    GROUP BY user_id
+  ) x
+);
+
+
+19.SELECT b.book_id,
+       b.title,
+       bc.borrow_count
+FROM books b
+JOIN (
+  SELECT l.book_id,
+         COUNT(*) AS borrow_count
+  FROM loans l
+  GROUP BY l.book_id
+) bc ON b.book_id = bc.book_id
+WHERE bc.borrow_count = (
+  SELECT MAX(y.borrow_count)
+  FROM (
+    SELECT COUNT(*) AS borrow_count
+    FROM loans
+    GROUP BY book_id
+  ) y
+);
+
+
+20.
+SELECT a.author_id,
+       a.author_name
+FROM authors a
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM books b
+  JOIN loans l ON b.book_id = l.book_id
+  WHERE b.author_id = a.author_id
+);
