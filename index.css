@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+#ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+}
+h1 {
+  text-align: center;
+}
+#just-line {
+  background-color: yellow;
+}
+#main-container {
+  background-color: rgb(251, 7, 7);
+  padding: 20px;
+  align-items: center;
+}
+nav {
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+a {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration-line: none;
+}
+#nssh {
+  height: 3px;
+  background-color: red;
+  border: none;
+}
+#faer3r {
+  align-items: start;
+  display: flex;
+  gap: 20px;
+  background-color: red;
+  padding: 5px;
+  margin-top: 0;
+}
+#hieufey2d {
+  margin: 20px;
+  background-color: rgb(163, 163, 163);
+  padding: 30px;
+  border: 3px solid rgb(24, 241, 0);
+  border-bottom: none;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#hieufey22222 {
+  margin: 20px;
+  background-color: rgb(163, 163, 163);
+  padding: 30px;
+  border: 3px solid rgb(24, 241, 0);
+  border-bottom: none;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 800px;
+}
+#b2ue2eegt {
+  margin: 20px;
+  background-color: rgb(163, 163, 163);
+  padding: 30px;
+  border: 3px solid rgb(24, 241, 0);
+  border-bottom: none;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 800px;
+}
+#bdwfefieb {
+  margin: 20px;
+  background-color: rgb(163, 163, 163);
+  padding: 30px;
+  border: 3px solid rgb(24, 241, 0);
+  border-radius: 5px;
+}
+#hfhwehfeh {
+  margin: 20px;
+  background-color: rgb(163, 163, 163);
+  padding: 30px;
+  border: 3px solid rgb(24, 241, 0);
+  border-top: none;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#njdfuetf {
+  margin: 20px;
+  font-size: 30px;
+  background-color: rgb(163, 163, 163);
+  padding: 30px;
+  border: 3px solid rgb(24, 241, 0);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#colors {
+  border: 3px solid red;
+}
+#heowh3 {
+  list-style-type: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+#nfdhlc {
+  font-size: 30px;
+  font-weight: bold;
+}
+#nfehwihs {
+  font-size: 30px;
+  font-weight: bold;
+}
+#figure {
+  margin: 0;
+}
+#ncihwuhcwhc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+#nut76b {
+  background-color: rgb(71, 71, 71);
+  border: 2px solid rgb(56, 56, 56);
+  margin-bottom: 2px;
+}
+#nwhdei {
+  border: 3px solid rgb(255, 255, 0);
+  margin-top: 0;
+}
